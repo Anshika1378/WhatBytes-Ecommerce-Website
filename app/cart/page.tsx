@@ -16,7 +16,7 @@ export default function CartPage() {
         {cart.length === 0 ? (
           <p className="mt-4">Cart is empty</p>
         ) : (
-          cart.map((item) => (
+          cart.map((item:any) => (
             <div key={item.id} className="flex gap-4 mt-4 border p-4 items-center">
               <img src={item.image} className="h-20" />
               <div className="flex-1">

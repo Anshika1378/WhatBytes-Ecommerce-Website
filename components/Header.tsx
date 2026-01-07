@@ -4,11 +4,21 @@ import { AiFillShopping } from "react-icons/ai";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 
+
+
+type CartItem = {
+  id: string;
+  title: string;
+  image: string;
+  price: number;
+  quantity: number;
+};
+
 export default function Header() {
-  const { cart } = useCart();
+const { cart }: { cart: CartItem[] } = useCart();
 
   // Calculate total items in cart
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalItems = cart.reduce((sum:number, item:CartItem) => sum + item.quantity, 0);
 
   return (
     <header className="flex items-center justify-between px-6 py-4 bg-blue-800 text-white">
